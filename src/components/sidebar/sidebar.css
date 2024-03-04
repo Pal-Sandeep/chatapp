@@ -1,7 +1,7 @@
 .user-list-container {
   overflow: auto;
   overflow-x: hidden;
-  height: 50vh;
+  height: 80vh;
 }
 .chat-online {
   color: #34ce57;

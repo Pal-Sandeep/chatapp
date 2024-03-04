@@ -66,7 +66,7 @@ const ChatBody = ({ match, currentChattingMember, setOnlineUserList }) => {
   };
 
   const messageSubmitHandler = (event) => {
-    event.preventDefault();
+      event.preventDefault();
     if (inputMessage) {
       socket.send(
         JSON.stringify({
@@ -114,8 +114,7 @@ const ChatBody = ({ match, currentChattingMember, setOnlineUserList }) => {
         <div className="d-flex align-items-center py-1">
           <div className="position-relative">
             <img
-            //   src={currentChattingMember?.image}
-              src="https://www.goscoodel.com/images/ramesh.png"
+              src={currentChattingMember?.image}
               className="rounded-circle mr-1"
               alt="User"
               width="40"

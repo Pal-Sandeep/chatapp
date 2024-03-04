@@ -5,8 +5,11 @@ import ApiConnector from "../../../api/apiConnector";
 import ApiEndpoints from "../../../api/apiEndpoints";
 import AppPaths from "../../../lib/appPaths";
 import "../authStyle.css";
+import { useNavigate } from "react-router-dom";
 
 const SignupScreen = ({ history }) => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -31,10 +34,7 @@ const SignupScreen = ({ history }) => {
       true
     );
     if (successSignupData) {
-      history.push({
-        pathname: AppPaths.LOGIN,
-        state: { redirectFrom: AppPaths.SIGN_UP },
-      });
+        navigate("/login");
     }
   };
 
@@ -88,9 +88,9 @@ const SignupScreen = ({ history }) => {
             <label className="custom-file-label" htmlFor="validatedCustomFile">
               {image ? image[0]?.name : "Choose Image..."}
             </label>
-            {errors.image && (
+            {/* {errors.image && (
               <p className="requiredFieldError mt-2">This field is required</p>
-            )}
+            )} */}
           </div>
           <div className="authFieldContainer">
             <input
